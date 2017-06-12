@@ -1,0 +1,52 @@
+body {
+    /* background-image: url("../img/intersex-flag-opacity.png"); */
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.menu {
+    position:fixed;
+    width:200px;
+    background-color: rgb(121, 2, 170);
+    color : rgb(255, 216, 0);
+    z-index:10;
+    height : 100%;
+    font-family: arial;
+}
+
+
+.menu li{
+    padding : 5px 0 5px 0;
+}
+
+.menu a {
+    text-decoration  : none;
+    color : rgb(255, 216, 0);
+}
+
+.menu a:hover{
+    color : #BBB;
+    text-shadow: 0px 0px 8px rgb(255, 216, 0);
+    text-decoration: none;
+}
+
+.menu ul {
+    list-style-type:none;
+    margin : 0;
+}
+
+.bottom-menu{
+    position : absolute;
+    bottom : 0px;
+    padding-bottom: 15px;
+}
+
+.top-menu{
+    padding-top: 15px;
+}
+
+.sous-menu, .sous-menu ul{
+    padding-left: 20px;
+}
+
+

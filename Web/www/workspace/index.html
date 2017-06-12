@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="script/menu.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/menu.css" type="text/css" />
+    <link rel="stylesheet" href="style/main.css" type="text/css" />
+    <link rel="stylesheet" href="style/arbre.css" type="text/css" />
+    <script type="text/javascript" src="script/arbre.js"></script>
+    <script type="text/javascript">
+$(document).ready(function(){
+    $("#down").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#tree").offset().top
+        }, 1000);
+    });
+    
+    $(".viewmore").click(function(){
+        if($(this).attr("vm") == "true"){
+            $(this).parent().next(".viewmorediv").animate({ height : "0"}, 500);
+            $(this).css({ transform: "rotate(0deg)"});
+            $(this).attr("vm" ,"false");
+        }
+        else{
+            $(this).parent().next(".viewmorediv").animate({ height : $(this).attr("th")}, 500);
+            $(this).css({ transform: "rotate(90deg)"});
+            $(this).attr("vm" ,"true");
+        }
+        window.setTimeout(hideUselessScrollbars, 550);
+    })
+    
+    hideUselessScrollbars();
+});
+
+function hideUselessScrollbars(){
+    var d = $(".debate")
+    for(var i=0; i<d.length; i++){
+        var s = $(d[i]).scrollTop();
+        $(d[i]).scrollTop(1);
+        if($(d[i]).scrollTop() != 1) $(d[i]).css("overflow-y", "hidden"); 
+        else $(d[i]).css("overflow-y", "scroll");
+        $(d[i]).scrollTop(s);
+    }
+}
+
+    </script>
+</head>
+
+<body>
+
+<div class="menu">
+    <ul class="top-menu sous-menu">
+        <li><a href="index.html"> Accueil </a></li>
+        <li>
+            <a href="index.html#tree"> Controverse </a>
+            <ul>
+                <li><a href="index.html#tree">Arbre des débats</a></li>
+                <li><a href="carte.html">Cartes des acteurs</a></li>
+                <li><a href="chrono.html">Frise des débats</a></li>
+                <li><a href="sondage.html">Sondage</a></li>
+            </ul>
+        </li>
+        <li><a href="conclusion.html">Conclusion</a></li>
+    </ul>
+    
+    <ul class="bottom-menu sous-menu">
+        <li><a href="apropos.html">A propos</a></li>
+    </ul>
+</div>
+
+
+<div id="intro" class="page"> 
+<h1 id="title" class="text-center"><span>Intersexe le premier jour, un genre pour toujours ?</span></h1>
+
+
+<div class="row" id="pres">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12"><h3 style="padding-left : 20px">Qu’est-ce que l’intersexuation ?</h3></div>
+        <div class="col-md-8" id="text">
+            <p>
+               Contrairement au sens commun, l’intersexuation ne se réduit pas à l’ambiguïté génitale. Il s’agit d’un ensemble complexe de variations physiologiques, endocrinologique ou génétiques qui ne se laissent pas classer selon la binarité des sexes. Il est donc plus exact de définir l’intersexuation non pas comme un mélange mythologique du féminin et du masculin, mais comme un <b>sexe atypique</b>.
+                <br />En effet, <b>le sexe</b> dit biologique d’une personne <b>est composé de plusieurs sous-catégories</b> (sexe génétique, gonadique, hormonal, phénotypique, mais aussi sexe social ou sexe psychique). Lorsqu’il n’y a <u>pas de concordance entre ces différents éléments</u> (certains jugés comme masculins, d’autres comme féminins), 
+                on peut parler <b>d’intersexuation, de variation du développement sexuel ou de DSD</b> pour <i>Disorder of Sex Development</i> (terme médical parfois rejeté car considéré comme patologisant)
+
+            </p>
+            <p style="font-size :small">
+                <i>D’après Michal Raz, <u>Qualité de vie et fertilité dans les études de suvi des personnes intersexuées</u></i>
+            </p>
+            <p>
+                On constate que ce sujet reste assez méconnu même dans une population jeune à priori plus sensibilisée aux questions de genres.
+            </p>
+            
+            <p>
+                Après avoir lu une brève définition, à la question : <i><b>Auparavant, aviez vous déjà entendu le terme “intersexe” ?</b></i>, la population interrogée répond : 
+            </p>
+        
+            <svg width="696" height="200" aria-label="Graphique" style="overflow: hidden;"><defs id="defs"><filter id="_ABSTRACT_RENDERER_ID_16"><feGaussianBlur in="SourceAlpha" stdDeviation="2"></feGaussianBlur><feOffset dx="1" dy="1"></feOffset><feComponentTransfer><feFuncA type="linear" slope="0.1"></feFuncA></feComponentTransfer><feMerge><feMergeNode></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><rect x="0" y="0" width="696" height="200" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="441" y="10" width="220" height="117" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g column-id="Non, jamais"><rect x="441" y="10" width="220" height="12" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="458" y="20.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">Non, jamais</text></g><circle cx="447" cy="16" r="6" stroke="none" stroke-width="0" fill="#3366cc"></circle></g><g column-id="Oui mais je ne savais pas ce que cela signifiait"><rect x="441" y="29" width="220" height="28" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="458" y="39.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">Oui mais je ne savais pas ce que</text><text text-anchor="start" x="458" y="55.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">cela signifiait</text></g><circle cx="447" cy="35" r="6" stroke="none" stroke-width="0" fill="#dc3912"></circle></g><g column-id="Oui, j’avais une vague idée de ce que cela signifiait"><rect x="441" y="64" width="220" height="28" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="458" y="74.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">Oui, j’avais une vague idée de ce</text><text text-anchor="start" x="458" y="90.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">que cela signifiait</text></g><circle cx="447" cy="70" r="6" stroke="none" stroke-width="0" fill="#ff9900"></circle></g><g column-id="Oui, j’ai déjà lu plusieurs articles à ce propos"><rect x="441" y="99" width="220" height="28" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="458" y="109.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">Oui, j’ai déjà lu plusieurs articles à</text><text text-anchor="start" x="458" y="125.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">ce propos</text></g><circle cx="447" cy="105" r="6" stroke="none" stroke-width="0" fill="#109618"></circle></g></g><g><path d="M229,100L262.82448239028145,16.59793533113499A90,90,0,0,1,319,100L229,100A0,0,0,0,0,229,100" stroke="#ffffff" stroke-width="1" fill="#109618"></path><text text-anchor="start" x="261.2524761832484" y="70.6891856927549" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">18,9%</text></g><g><path d="M229,100L157.46310027279821,154.6120131236734A90,90,0,0,1,262.8244823902815,16.597935331135005L229,100A0,0,0,0,0,229,100" stroke="#ffffff" stroke-width="1" fill="#ff9900"></path><text text-anchor="start" x="163.6262576945251" y="67.65268731191877" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">41,5%</text></g><g><path d="M229,100L172.29209407764603,169.88714764462384A90,90,0,0,1,157.46310027279821,154.61201312367342L229,100A0,0,0,0,0,229,100" stroke="#ffffff" stroke-width="1" fill="#dc3912"></path></g><g><path d="M229,100L319,100A90,90,0,0,1,172.29209407764603,169.88714764462384L229,100A0,0,0,0,0,229,100" stroke="#ffffff" stroke-width="1" fill="#3366cc"></path><text text-anchor="start" x="238.99357137241452" y="161.91482194242906" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">35,8%</text></g><g></g></svg>
+            
+            <a href="sondage.html">En savoir plus sur le sondage</a>
+        </div>
+        <div class="col-md-4" id="logo"><img src="img/logo_intersex_transparent.png" alt="Logo intersexe" /></div>
+    </div> 
+</div>
+
+<h5 class="text-center">
+    <span>Vous trouverez ci-dessous un arbre des débats qui vous permettra de vous faire une idée globale de axes de débats sur ce sujet.</span>
+    <br />
+    <img src="img/arrow_bottom.png" id="down"/>
+</h5>
+
+
+</div>
+
+<div id="tree" class="page">
+<div id="container">
+    <img id="global-img" src="img/tree.png" draggable="false" />
+    <img id="spec-img" src="img/tree_big.png"  draggable="false" style="display : none;" />
+    <div class="bubble-label" id="label0">Sexe légal</div>
+    <div class="bubble-label" id="label1">LGBT(i?)</div>
+    <div class="bubble-label" id="label2">Opérations chirugicales</div>
+    
+    <div class="small-label text-center" id="small1">La mention du sexe <br />&agrave; l&#39;&Eacute;tat civil est-elle pertinente ?</div>
+    <div class="small-label text-center" id="small0">Quelle lien entre "sexe neutre" <br /> et op&eacute;rations chirurgicales ?</div>
+    <div class="small-label" id="small2">Intersexe et trans, une même famille ?</div>
+    <div class="small-label text-center" id="small3">Comment la cause <br />intersexe se rapporte-t-elle (ou non)<br /> au mouvement LGBT+ ?</div>
+    <div class="small-label text-center" id="small5">Doit-on traiter les <br /> personnes intersexes comme <br /> des pathologies ?</div>
+    <div class="small-label text-center" id="small4">A qui devrait revenir la <br />décision pour les opérations qui <br /> se font à la naissance ?</div>
+</div>
+
+    <div class="debate" id="d1" num="1">
+
+        <p dir="ltr" class="text-center"><strong><span style="font-size: 24px;">La mention du sexe &agrave; l&#39;&Eacute;tat civil est-elle pertinente ?</span></strong></p>
+        <p></p>
+
+        <p dir="ltr">La controverse sur intersexe, l&egrave;ve un profond d&eacute;bat de soci&eacute;t&eacute; sur le rapport de l&rsquo;Etat aux individus. En particulier, l&#39;&Eacute;tat doit-il conna&icirc;tre &nbsp;le sexe des individus ? Ou tr&egrave;s concr&egrave;tement, le sexe d&rsquo;un individu doit-il &ecirc;tre mentionn&eacute; &agrave; l&#39;&Eacute;tat civil ?</p>
+        
+        <p dir="ltr">&nbsp;D&rsquo;apr&egrave;s le sociologue Eric Fassin, les &eacute;volutions sociales auxquelles nous avons assist&eacute; r&eacute;cemment, comme par exemple le mariage pour tous et l&rsquo;adoption pour les couples du m&ecirc;me sexe, ont remis en cause l&rsquo;utilit&eacute; de la mention du sexe &agrave; l&#39;&Eacute;tat civil.</p>
+        
+        <p dir="ltr">&nbsp; Le philosophe Gaspard Koenig, pr&eacute;sident de think tank g&eacute;n&eacute;ration libre s&rsquo;appuie sur une d&eacute;finition de la libert&eacute; &ldquo;n&eacute;gative&rdquo; &eacute;tablie par Georges Perec pour avancer un argument fondamentalement diff&eacute;rent : Pour lui chaque individu est entour&eacute; d&rsquo;une sorte bulle imaginaire dans laquelle il poss&egrave;de tous les droits et peut tout faire et ce ind&eacute;pendamment de l&rsquo;action de l&rsquo;Etat. La th&egrave;se de Gaspard Koenig est simplement que le sexe d&rsquo;un individu appartient &agrave; cette bulle et qu&rsquo;ainsi le fait que l&rsquo;Etat recense son sexe est une atteinte &agrave; la libert&eacute; dudit individu.</p>
+        
+        <p dir="ltr">Enfin, ce d&eacute;bat est &eacute;troitement li&eacute; avec la controverse concernant l&rsquo;obtention de la mention sexe neutre &agrave; l&#39;&Eacute;tat civil. En effet, les intersexes sont divis&eacute;s entre d&rsquo;un c&ocirc;t&eacute; ceux qui d&eacute;sirent obtenir la mention sexe neutre &agrave; l&#39;&Eacute;tat civil et les autres, dont par exemple Vincent Guillot qui vit l&rsquo;assignation d&rsquo;un sexe l&eacute;gal comme une violence &agrave; sa personne en effet il ne se reconna&icirc;t dans aucune des deux ou potentiellement trois cat&eacute;gories propos&eacute;es &agrave; l&#39;&Eacute;tat civil , il pr&ocirc;ne donc l&rsquo;absence du sexe &agrave; l&#39;&Eacute;tat civil.</p>
+        
+        <p></p>
+        
+        <p>
+        	<br>
+        </p>
+
+        
+        <p dir="ltr">Sources : <img src="img/triangle.png" class="viewmore" vm=false th="140px" /> </p>
+        
+        <div class="viewmorediv">
+       <p></p>
+
+<p dir="ltr"><a href="http://www.lepoint.fr/chroniqueurs-du-point/laurence-neuer/sexe-et-etat-civil-l-etat-n-a-pas-vocation-a-instituer-la-verite-du-sexe-08-08-2016-2059676_56.php">http://www.lepoint.fr/chroniqueurs-du-point/laurence-neuer/sexe-et-etat-civil-l-etat-n-a-pas-vocation-a-instituer-la-verite-du-sexe-08-08-2016-2059676_56.php</a></p>
+
+
+<p dir="ltr"><a href="http://nouveau.europresse.com/Link/TELECOMT_1/news%C2%B720170510%C2%B7EC%C2%B70212058339300">http://nouveau.europresse.com/Link/TELECOMT_1/news&middot;20170510&middot;EC&middot;0212058339300</a></p>
+
+<p dir="ltr"><a href="http://www.lexpress.fr/actualites/1/actualite/apres-les-mutilations-la-vie-detruite-de-vincent-guillot-ne-intersexe_1892680.html">http://www.lexpress.fr/actualites/1/actualite/apres-les-mutilations-la-vie-detruite-de-vincent-guillot-ne-intersexe_1892680.html</a></p>
+
+<p></p>
+
+<p>
+	<br>
+</p>
+</div>
+        
+        <p class="poll">
+            <b>Sondage :</b>
+            Pensez vous qu’il est utile de préciser son sexe “légal“ sur une carte d’identité ou passeport ?
+        </p>
+        
+        <svg width="696" height="200" aria-label="Graphique" style="overflow: hidden;"><defs id="defs"></defs><rect x="0" y="0" width="696" height="200" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="441" y="10" width="220" height="165" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g column-id="Non, les autres données sont suffisante pour nous identifier"><rect x="441" y="10" width="220" height="28" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="458" y="20.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">Non, les autres données sont</text><text text-anchor="start" x="458" y="36.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">suffisante pour nous identifier</text></g><circle cx="447" cy="16" r="6" stroke="none" stroke-width="0" fill="#3366cc"></circle></g><g column-id="Non, car le sexe”légal” peut ne pas correspondre au sexe ressenti par une personne"><rect x="441" y="45" width="220" height="44" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="458" y="55.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">Non, car le sexe”légal” peut ne pas</text><text text-anchor="start" x="458" y="71.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">correspondre au sexe ressenti par</text><text text-anchor="start" x="458" y="87.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">une personne</text></g><circle cx="447" cy="51" r="6" stroke="none" stroke-width="0" fill="#dc3912"></circle></g><g column-id="Oui , car il y a des hommes qui ressemblent à des femmes et inversement"><rect x="441" y="96" width="220" height="44" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="458" y="106.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">Oui , car il y a des hommes qui</text><text text-anchor="start" x="458" y="122.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">ressemblent à des femmes et</text><text text-anchor="start" x="458" y="138.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">inversement</text></g><circle cx="447" cy="102" r="6" stroke="none" stroke-width="0" fill="#ff9900"></circle></g><g column-id="Oui , mais il faudrait ajouter une autre mention de sexe pour les personnes se considérant ni homme ni femme"><rect x="441" y="147" width="220" height="28" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="458" y="157.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">Oui , mais il faudrait ajouter une</text><text text-anchor="start" x="458" y="173.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">autre mention de sexe pour les per…</text><rect x="458" y="147" width="203" height="28" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g><circle cx="447" cy="153" r="6" stroke="none" stroke-width="0" fill="#109618"></circle></g></g><g><path d="M229,100L252.72284494621613,13.182797628247727A90,90,0,0,1,319,100L229,100A0,0,0,0,0,229,100" stroke="#ffffff" stroke-width="1" fill="#109618"></path><text text-anchor="start" x="259.3737423054749" y="67.65268731191874" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">20,8%</text></g><g><path d="M229,100L146.63689444812837,136.28110863591752A90,90,0,0,1,252.72284494621616,13.18279762824774L229,100A0,0,0,0,0,229,100" stroke="#ffffff" stroke-width="1" fill="#ff9900"></path><text text-anchor="start" x="165.6534026171059" y="64.68946715309175" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">35,8%</text></g><g><path d="M229,100L200.17571315234463,185.25937184687723A90,90,0,0,1,146.63689444812837,136.28110863591752L229,100A0,0,0,0,0,229,100" stroke="#ffffff" stroke-width="1" fill="#dc3912"></path><text text-anchor="start" x="170.15343582339838" y="149.39650265993865" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">13,2%</text></g><g><path d="M229,100L319,100A90,90,0,0,1,200.17571315234463,185.25937184687723L229,100A0,0,0,0,0,229,100" stroke="#ffffff" stroke-width="1" fill="#3366cc"></path><text text-anchor="start" x="247.7512265686667" y="154.72261177939194" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">30,2%</text></g><g></g></svg>
+    </div>
+    
+    <div class="debate" id="d0" num="0">
+        <p></p>
+
+        <p dir="ltr">La remise en cause de la &nbsp;binarit&eacute; du sexe l&eacute;gal &agrave; l&#39;&Eacute;tat civil est un des piliers de la controverse intersexe. Le coeur de ce d&eacute;bat a &eacute;t&eacute; mis &agrave; nu en 2015 par requ&ecirc;te &eacute;mise par Ga&euml;tan Schmidt au Tribunal d&rsquo;Orl&eacute;ans pour obtenir une mention &ldquo;sexe neutre&rdquo; &agrave; l&#39;&Eacute;tat civil. Cette demande, accord&eacute;e dans un premier temps aurait permis aux intersexes d&rsquo;obtenir une existence l&eacute;gale &agrave; proprement parl&eacute; et de ne plus &ecirc;tre class&eacute; dans une cat&eacute;gorie qui ne correspond pas &agrave; la r&eacute;alit&eacute; de leurs physionomies.</p>
+        
+        <p dir="ltr">&nbsp;Cependant, en 2016, un recours &agrave; la cour de cassation a supprim&eacute; cette possibilit&eacute;. L&rsquo;argument principal de la cours de cassation repose sur le fait que le d&eacute;sordre social et administratif que l&rsquo;acc&egrave;s &agrave; une telle mention pourrait causer est trop important par rapport &agrave; la g&ecirc;ne occasionn&eacute;e pour les plaignants.</p>
+        
+        <p dir="ltr">Plus qu&rsquo;une victoire sociale, l&eacute;gale ou symbolique, l&rsquo;obtention d&rsquo;une mention &ldquo;sexe neutre&rdquo; pour les intersexes aurait pu &ecirc;tre un pas tr&egrave;s concret vers la protection des enfants intersexes contre les op&eacute;rations d&rsquo;assignement de sexe &agrave; la naissance. En effet, lors de la naissance d&rsquo;un enfant intersexe, ni les parents, ni les m&eacute;decins ne savent vraiment comment agir. Aussi, l&rsquo;obligation de la mention d&rsquo;une sexe l&eacute;gal binaire ( homme ou femme) sur l&#39;&Eacute;tat civil force une d&eacute;cision rapide des parents et des m&eacute;decins, d&eacute;cision qui peut aboutir sur une intervention chirurgicale d&rsquo;assignation de sexe. Ainsi en autorisant le sexe neutre &agrave; l&#39;&Eacute;tat civil, on permettrait aux parents, aux m&eacute;decins, et &agrave; l&rsquo;enfant lui-m&ecirc;me d&rsquo;obtenir un laps de temps suppl&eacute;mentaire pour d&eacute;cider ou non de son sexe physique, et de la physionomie qui co&iuml;ncide avec son genre.&nbsp;</p>
+        
+        <p dir="ltr">M&ecirc;me si la mention &nbsp;&ldquo;sexe neutre&rdquo; n&rsquo;a pas pu &ecirc;tre obtenue de mani&egrave;re durable, le simple fait qu&rsquo;un tel d&eacute;bat ait pu avoir lieu est la d&eacute;monstration de l&rsquo;existence d&rsquo;une dynamique en faveur des droits des intersexes qui n&rsquo;existait pas auparavant. Ce mouvement, cette impulsion donne de l&rsquo;espoir aux intersexes qui y voit une opportunit&eacute; pour faire cesser les op&eacute;rations chirurgicales syst&eacute;matiques pratiqu&eacute;es sur les enfants intersexes.</p>
+        
+        <p></p>
+        
+        <p>
+        	<br>
+        </p>
+
+        
+        <p dir="ltr">Sources : <img src="img/triangle.png" class="viewmore" vm="false" th="220px" /></p>
+        
+        <div class="viewmorediv">
+          <p dir="ltr"><a href="http://www.europe1.fr/societe/ni-homme-ni-femme-qui-sont-les-intersexes-2529383">http://www.europe1.fr/societe/ni-homme-ni-femme-qui-sont-les-intersexes-2529383</a></p>
+
+<p dir="ltr"><a href="http://www.francetvinfo.fr/societe/etre-intersexe-c-est-vivre-avec-la-douleur-et-la-honte_1129287.html">http://www.francetvinfo.fr/societe/etre-intersexe-c-est-vivre-avec-la-douleur-et-la-honte_1129287.html</a></p>
+
+<p dir="ltr"><a href="http://www.leparisien.fr/societe/etat-civil-la-mention-sexe-neutre-d-un-intersexe-refusee-par-la-cour-de-cassation-04-05-2017-6916554.php">http://www.leparisien.fr/societe/etat-civil-la-mention-sexe-neutre-d-un-intersexe-refusee-par-la-cour-de-cassation-04-05-2017-6916554.php</a></p>
+
+<p dir="ltr"><a href="http://www.lavoixdunord.fr/157507/article/2017-05-04/la-cour-de-cassation-refuse-la-mention-sexe-neutre-pour-l-etat-civil-d-un">http://www.lavoixdunord.fr/157507/article/2017-05-04/la-cour-de-cassation-refuse-la-mention-sexe-neutre-pour-l-etat-civil-d-un</a></p>
+
+<p dir="ltr"><a href="http://www.lalibre.be/actu/international/la-justice-francaise-refuse-la-mention-sexe-neutre-pour-l-etat-civil-d-un-intersexe-590b5393cd702b5fbe613f10">http://www.lalibre.be/actu/international/la-justice-francaise-refuse-la-mention-sexe-neutre-pour-l-etat-civil-d-un-intersexe-590b5393cd702b5fbe613f10</a></p></div>
+    </div>
+    <div class="debate" id="d2" num="2">
+        <p dir="ltr" style="text-align: center;"><strong><span style="font-size: 24px;">Intersexe et trans*, une m&ecirc;me famille ?</span></strong></p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr" style="text-align : center;"><img src="https://lh5.googleusercontent.com/lmd-l_2siA326hOqWFe9SQ3U37L9Sr1YNyF6fpfWNV6OgIxvDBJtttdiYG2nQHgqS36pW_6V06A0ni0rLX0pjux5frafejLv70X73X4Y9RxrR6NC__ZfVYGpEvJafMuo4v6O8Gph2rPoxgmrHg" width="100" height="133" alt="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Male_and_female_sign.svg/100px-Male_and_female_sign.svg.png" class="fr-fic fr-dib"></p>
+
+<p dir="ltr" style="text-align: center;">&laquo; Signe Mars et V&eacute;nus, utilis&eacute; comme symbole des personnes intersexes ou celles transgenres. &raquo;</p>
+
+<p dir="ltr">
+        <br>
+</p>
+
+<p dir="ltr">
+        <br>
+</p>
+
+<p dir="ltr"><strong><span style="font-size: 18px;">Intersexes et trans* les mal-aim&eacute;s du syst&egrave;me ?</span></strong></p>
+
+<p dir="ltr">
+        <br>
+</p>
+
+<p dir="ltr">Nos interrogations ont d&eacute;but&eacute; avec ce <a href="https://www.facebook.com/notes/chrysalide-asso/communiqu%C3%A9-de-la-f%C3%A9d%C3%A9ration-trans-et-intersexes-%C3%A0-ladresse-de-linter-lgbt/1904546393162356/">communiqu&eacute;</a> dans lequel l&rsquo;association Trans* et intersexe reproche &agrave; l&rsquo;<strong>inter-lgbt </strong>(ne vous trompez pas, inter n&rsquo;est pas pour intersexe, mais &laquo; L&rsquo;Interassociative lesbienne, gaie, bi et trans &raquo;): &laquo; de parler en notre nom, surtout si c&#39;est pour d&eacute;fendre des <strong>approches r&eacute;trogrades</strong>. &raquo; &laquo; En effet, Alors&nbsp;</p>
+
+<p dir="ltr"><span style="background-color: transparent; text-align: inherit;">que les choses ne cessent d&rsquo;avancer dans les mouvements trans* et intersexe, comme le montrent le succ&egrave;s de l&rsquo;Existrans et la logique d&rsquo;autonomie d&eacute;fendue par un nombre croissant d&rsquo;orga[nisation]s et de personnes concern&eacute;es, l&#39;Inter-LGBT retourne en arri&egrave;re, faisant ainsi preuve d&#39;un <strong>m&eacute;pris</strong> in&eacute;gal&eacute; ou d&#39;une <strong>m&eacute;connaissance</strong> incroyable, en mettant en avant des propositions <strong>r&eacute;actionnaires, pathologisantes et infantilisantes</strong>, dignes de pratiques et d&#39;ann&eacute;es que nous pensions r&eacute;volues. Nous l&rsquo;invitons &agrave; s&#39;interroger sur sa <strong>l&eacute;gitimit&eacute;</strong> et sur sa responsabilit&eacute; &agrave; s&#39;exprimer ainsi &agrave; l&#39;encontre des personnes concern&eacute;es et de leurs cadres collectifs. &raquo;</span></p>
+
+<p dir="ltr">L&rsquo;acte et les paroles de l&rsquo;association &laquo; inter-lgbt &raquo; et la r&eacute;action de l&rsquo;association Trans et Intersexe r&eacute;sume parfaitement et justifient ici nos interrogations.&nbsp;</p>
+
+<p dir="ltr">Ils nous permettent &eacute;galement de voir que les trans* et les intersexes sont peut-&ecirc;tre rel&eacute;gu&eacute;s au m&ecirc;me statut. Ajouter des communaut&eacute;s dont le d&eacute;bat ne porte pas sur les m&ecirc;mes sujets &agrave; savoir : l&rsquo;orientation sexuelle, le genre, le corps,etc m&ecirc;me si les combats de reconnaissance vis &agrave; vis de la soci&eacute;t&eacute; et de d&eacute;-m&eacute;dicalisation par rapport aux m&eacute;decins sont les m&ecirc;mes ; ne suffisent peut-&ecirc;tre pas et m&egrave;nerait &agrave; la <strong>priorisation des causes</strong> dans le mouvement LGBT+, or elles devraient toutes porter le m&ecirc;me statut.&nbsp;</p>
+
+<p dir="ltr">Les trans* et les intersexes tiennent peut-&ecirc;tre le m&ecirc;me statut au sein du mouvement LGBT, mais appartiennent-ils &agrave; la m&ecirc;me communaut&eacute; ?</p>
+
+<p dir="ltr">
+        <br>
+</p>
+
+<p dir="ltr"><strong><span style="font-size: 18px;">&nbsp;Les intersexes ne font pas partie du mouvement trans*&nbsp;</span></strong><img src="https://lh3.googleusercontent.com/_b4JOgDOIIia4Zbbm5nDTKeCSVOqjIcaP593kq0vZvp_ykEoTaby2sZ_qmtrIu9LgIsoZroEErvYneZMtOBd10OulB0vgf962y380i7zls4hdpwPByOVGSR0zP5lPHCVO5l_E0jx" width="230" height="316" class="fr-fic fr-dib"></p>
+
+<p dir="ltr">
+        <br>
+</p>
+
+<p dir="ltr">&laquo;&nbsp;Non. Bien que des individus qui sont intersexu&eacute;s puissent s&rsquo;identifier comme transgenre, le contraire n&rsquo;est pas vrai. La plupart des personnes du mouvement transgenre ne sont pas intersexu&eacute;es. Inclure l&rsquo;intersexuation sous le terme-chapeau de &quot;transgenre&quot; n&eacute;glige nos besoins sp&eacute;cifiques qui sont souvent une r&eacute;forme m&eacute;dicale, des solutions l&eacute;gales au sujet du genre que nous avons, des solutions en termes de sant&eacute; sp&eacute;cifiques aux corps intersexu&eacute;s et par-dessus tout, le fait que la plupart des personnes intersexu&eacute;es ne sont pas des trans. Beaucoup sont heureux d&rsquo;&ecirc;tre des hommes ou des femmes et de plus en plus d&rsquo;entre nous sont ravis d&rsquo;&ecirc;tre intergenres.&nbsp;&raquo; [<a href="https://www.genrespluriels.be/Dix-idees-fausses-sur-l-intersexuation">Source</a>]</p>
+
+<p dir="ltr">Beaucoup de probl&eacute;matiques rapprochent intersexes et trans*. Parmi elles, on peut citer celle de l&rsquo;<strong>apparence physique</strong> qui ne correspond pas &agrave; celle assign&eacute;e, celle de l&rsquo;<strong>&eacute;tat civil</strong> qu&rsquo;ils veulent sans conditions ou encore la <strong>d&eacute;pathologisation</strong> de leur condition.&nbsp;</p>
+
+<p dir="ltr">Vous trouverez <a href="http://www.transfaithonline.org/fileadmin/TFteaching/intersex-ClarifyingTranssexualism.pdf">ici</a>&nbsp; et <a href="file:///C%3A%5CUsers%5Csosof%5CDocuments%5CETIC13%5Ctrans_vs_intersexe.docx">ici</a> [traduit de cette <a href="https://oii.org.au/18194/differences-intersex-trans/">source</a>] deux tableaux r&eacute;capitulant les diff&eacute;rences entre Trans* et intersexe.</p>
+
+<p dir="ltr">
+        <br>
+</p>
+
+<p dir="ltr"><strong><span style="font-size: 18px;">Les trans* sont-ils des intersexes ?</span></strong></p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><img src="https://lh4.googleusercontent.com/CaLSa-JdFPkfJHmSIiIZaq7Lt1qBr1o4zv7rnnzloJ5Hq0FedMQTS1o9KbFlvgRZ1sqIxeDXGeVFQdbFOziV_xWAE5JcXHVJqtX6SRcYUWygE93VCfR-40vraB4HlBm_5iYP7zj5" width="457" height="435" class="fr-fic fr-dib"></p>
+
+<p dir="ltr">
+        <br>
+</p>
+
+<p dir="ltr">&laquo; Le probl&egrave;me le plus r&eacute;cent est de savoir si les personnes transgenres devraient &ecirc;tre &quot;autoris&eacute;es&nbsp;&quot; &agrave; se d&eacute;finir comme intersexe, affirmer que les deux groupes sont, &agrave; toutes les fins pratiques, les m&ecirc;mes, et devraient &ecirc;tre combin&eacute;s en un seul groupe de &laquo; transgression de genre &raquo;. &raquo;</p>
+
+<p dir="ltr">&laquo; Je suis en profond d&eacute;saccord avec ce concept [...], je re&ccedil;ois constamment des courriels et des lettres de transgenres demandant : &laquo; Pouvez-vous m&#39;aider &agrave; savoir si je suis intersexe ? &raquo; Ce que la plupart d&#39;entre eux signifie vraiment, bien s&ucirc;r, est : &laquo; J&rsquo;esp&egrave;re que je suis intersexe d&#39;une certaine mani&egrave;re, parce que je vais avoir une <strong>raiso</strong><span style="background-color: transparent; text-align: inherit;"><strong>n biologique l&eacute;gitime d&#39;&ecirc;tre transgenre</strong> et ainsi <strong>justifier ma transexualit&eacute;</strong> devant mes parents / patron / Les amis / les conjoints / les enfants etc. &raquo; C&#39;est comme si, dans l&#39;esprit de certaines personnes,<strong>&nbsp;intersexe est plus&quot; r&eacute;el &quot;et donc plus l&eacute;gitime que transsexuel ou transgenre</strong>. &raquo;</span></p>
+
+<p dir="ltr">Certains &laquo; transsexuels expriment l&#39;envie &agrave; ceux d&#39;entre nous qui ont &eacute;t&eacute; <strong>mutil&eacute;s &agrave; la naissance</strong>. (&laquo; Tu es si chanceux ! Tu as eu le changement de sexe que je voulais ! &raquo;) &raquo; [<a href="https://oii.org.au/13651/isgd-and-the-appropriation-of-intersex/">Source</a>]</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr">En 2010, Tracie O&rsquo;Keefe, sexologue, hypnoth&eacute;rapeute et auteur pr&eacute;sente le terme &laquo; <strong>ISGD</strong> &raquo; pour Intersex Sex &nbsp;and/or Gender Diverse. Elle a &eacute;crit beaucoup d&rsquo;ouvrages sur les probl&egrave;mes que rencontrent les trans*. O&rsquo;keefe a &eacute;crit un article : <a href="http://www.thescavenger.net/isgd/trans-as-intersex-crossing-the-line-56934-369.html">Trans as intersex : Crossing<br>the line</a> dans lequel elle <strong>red&eacute;finit intersexe comme une identit&eacute; trans*</strong> et d&eacute;clare que toute personne intersexe qui n&#39;est pas d&#39;accord avec cette d&eacute;finition est <strong>transphobe</strong>.&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr">L&#39;ajout d&#39;un &laquo; I &raquo; &agrave; &laquo; SGD &raquo; a associ&eacute; des personnes intersexes avec par exemple les personnes trans* sans consentement et consensus avec les intersexes.</p>
+
+<p dir="ltr">Cet ajout a eu pour cons&eacute;quence l&#39;<strong>appropriation et la red&eacute;finition d&#39;intersexe</strong> comme une forme d&#39;identit&eacute; transgenre et par la m&ecirc;me occasion d&rsquo;effacer les personnes intersexes en tant que groupe distinct, leur r&eacute;alit&eacute; et leurs revendications. &nbsp;<strong>ISGD est une autre fa&ccedil;on d&#39;exprimer trans* comme intersexe.</strong>
+        <br>Ainsi <a href="https://oii.org.au/13651/isgd-and-the-appropriation-of-intersex/">l&rsquo;Organisation Internationale des Intersexu&eacute;es</a>, la premi&egrave;re organisation intersexuelle internationale demande aux personnes et ou organisations utilisant cette terminologie d&rsquo;arr&ecirc;ter.</p>
+        
+        <p> <b>Frise : </b> <img src="img/triangle.png" class="viewmore" vm="false" th="400px"/></p>
+        
+        <div class="viewmorediv">
+            <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1jeGypSlXXMH3eCuIFIlBWmGbSKuAQo_XIVRh1yQACCE&font=UnicaOne-Vollkorn&lang=fr&initial_zoom=0&height=400' width='100%' height='400' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+        </div>
+    </div>
+    <div class="debate" id="d3" num="3">
+        <p dir="ltr" style="text-align: center;"><span style="font-size: 24px;"><strong>Comment la cause intersexe se rapporte-t-elle (ou non) au mouvement LGBT+?</strong></span></p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr" style="text-align: center;"><img src="https://lh3.googleusercontent.com/uTdjiUyoNIKHyyakIuUi28sbaBxn7SajTdyBCiJHHvDKcmuwuikABbLqkhMO0jcTdL99wtQ5srv1vy-QPS7irW_Cjt8KmGsa8CcppVOX4hEoDb2vyrW6hDmkWEdebZWwPKiIOQiJ" width="455" height="111" class="fr-fic fr-dib"></p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr" style="text-align: justify;">Si vous vous attelez &agrave; des recherches sur les<strong>&nbsp;intersexes</strong>, vous tomberez forc&eacute;ment sur le terme &laquo; <strong>LGBTI</strong> &raquo; qui repr&eacute;sente le mouvement LGBT et les intersexes. Apr&egrave;s des recherches sur les demandes des intersexes et leur combat, le manque de visibilit&eacute; est une des pr&eacute;occupations au c&oelig;ur du probl&egrave;me.</p>
+
+<p dir="ltr" style="text-align: justify;">Une interrogation s&rsquo;empare alors de nous, le mouvement LGBT qui est aujourd&rsquo;hui si visible, prend sous son aile les intersexes et ces derniers ne parviennent toujours pas &agrave; &ecirc;tre visibles. Pourquoi ?</p>
+
+<p dir="ltr" style="text-align: justify;">Quels sont les <strong>int&eacute;r&ecirc;ts communs</strong> aux deux partis qui justifient leur <strong>alliance</strong> et quelles sont les diff&eacute;rences qui s&egrave;ment encore le doute quant &agrave; la <strong>l&eacute;gitimit&eacute;</strong> de l&rsquo;ajout de la lettre &laquo; i &raquo; dans LGBTI.</p>
+
+<p dir="ltr">On ne trouve &eacute;tonnamment pas de communiqu&eacute; officiel de la part de la communaut&eacute; LGBT d&eacute;clarant officiellement leur alliance avec les personnes intersexes. Chaque <a href="http://fullfrontalactivism.blogspot.fr/2014/02/adding-i-revisited-call-to-action-for.html">centre LGBT</a> ou <a href="http://www.alternatifs.org/spip/la-com-lgbt-devient-lgbti">association</a>, a la libert&eacute; ou non d&rsquo;ajouter le &laquo; i &raquo;. Y-a-t-il <strong>unanimit&eacute;</strong> quant &agrave; la coh&eacute;rence de l&rsquo;ajout de la cause intersexe &agrave; celle des LGBT ?</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr"><span style="font-size: 18px;"><strong>Le &laquo; i &raquo; de LGBTI que signifie-t-il ?</strong>&nbsp;</span></p>
+
+<p dir="ltr" style="text-align: center;"><img src="https://lh5.googleusercontent.com/n2yz1CIPJPX1GUvtUNuPjwut12Q2LCL_bPYEfYig9MnuoHzWHJJx5c-TNnz2nkHDC3NGZ5bWi6OaXyZmoSTkb9ZbjvDdszT77jSrNyxByBeMTVqS7cOLmQHYaqFx6-u-h7G1WPTe" width="225" height="251" class="fr-fic fr-dib" style="width: 169px; height: 188.529px;"></p>
+
+<p dir="ltr">
+        <br>
+</p>
+
+<p dir="ltr">Commen&ccedil;ons par les d&eacute;finitions de l&rsquo;acronyme LGBT et de l&rsquo;intersexuation :</p>
+
+<p dir="ltr">&laquo; Lesbiennes, gays, bisexuels et <a href="https://fr.wikipedia.org/wiki/Transsexualisme">trans</a> &raquo; ou &laquo; <a href="https://fr.wikipedia.org/w/index.php?title=Lesbiennes,_gays,_bisexuels_et_transgenres&oldid=137392870">LGBT&nbsp;</a>&raquo; est un <a href="https://fr.wikipedia.org/wiki/Sigle">sigle</a> utilis&eacute; pour d&eacute;signer les personnes non <a href="https://fr.wikipedia.org/wiki/H%C3%A9t%C3%A9rosexualit%C3%A9">h&eacute;t&eacute;rosexuelles</a> et/ou non <a href="https://fr.wikipedia.org/wiki/Cisgenre">cisgenres</a>.</p>
+
+<p dir="ltr">&nbsp;Les personnes <a href="https://oii.org.au/18106/what-is-intersex/">intersexes</a> sont n&eacute;es avec des caract&eacute;ristiques sexuelles physiques qui ne correspondent pas aux normes m&eacute;dicales et sociales pour les corps f&eacute;minins ou masculins. On parle d&rsquo;une ambigu&iuml;t&eacute; sexuelle.</p>
+
+<p dir="ltr">
+        <br>
+</p>
+
+<p dir="ltr" style="text-align: center;">D&rsquo;o&ugrave; vient cette <strong>assimilation</strong> entre LGBT et intersexe ? Revenons, 10 ans en arri&egrave;re.&nbsp;</p>
+
+<p dir="ltr">
+        <br>
+</p>
+
+<p dir="ltr">En <a href="http://www.observatoire-des-transidentites.com/internet-et-l-emergence-du-mouvement-intersexe-une-experience-singuliere.html">2006</a>, durant &nbsp;la Conf&eacute;rence internationale sur les droits humains des LGBT &agrave; <a href="https://fr.wikipedia.org/wiki/Montr%C3%A9al">Montr&eacute;al</a>, la r&eacute;daction de la <a href="https://fr.wikisource.org/wiki/D%C3%A9claration_de_Montr%C3%A9al_sur_les_droits_humains_des_LGBT">D&eacute;claration de Montr&eacute;al sur les droits humains</a> des <a href="https://fr.wikipedia.org/wiki/D%C3%A9claration_de_Montr%C3%A9al_sur_les_droits_humains_des_LGBT"><strong>LGBT</strong></a><strong>&nbsp;&eacute;voque la cause des personnes intersexes:</strong></p>
+
+<p dir="ltr">&laquo; Les personnes se d&eacute;clarant intersexu&eacute;es confrontent une forme particuli&egrave;re de violence : la mutilation des organes g&eacute;nitaux provoqu&eacute;e par des chirurgies post-natales inutiles afin qu&rsquo;elles deviennent conformes au mod&egrave;le binaire traditionnel des caract&eacute;ristiques sexuelles &raquo;&nbsp;</p>
+
+<p dir="ltr">&nbsp;&laquo; Nous exigeons que les interventions chirurgicales sur les organes g&eacute;nitaux des personnes intersexu&eacute;es soient interdites jusqu&rsquo;&agrave; ce que ces derni&egrave;res soient en &acirc;ge de comprendre et de consentir &agrave; un tel geste &raquo;&nbsp;</p>
+
+<p dir="ltr">&nbsp;&laquo; Les transgenres, transsexuels, intersexu&eacute;s et personnes en transition de sexe sont de plus en plus visibles et font partie de notre communaut&eacute; qui commence &agrave; tenir compte de plusieurs de leurs demandes &raquo;</p>
+
+<p dir="ltr">
+        <br>
+</p>
+
+<p dir="ltr">En 2007, les <a href="http://www.yogyakartaprinciples.org/principle-18-fr/">Principes de Jogjakarta</a> qui sont bas&eacute;s sur l&#39;application de la l&eacute;gislation internationale des droits humains en mati&egrave;re d&#39;orientation sexuelle et d&#39;identit&eacute; de genre sont pr&eacute;sent&eacute;s devant le<strong>&nbsp;<a href="https://fr.wikipedia.org/wiki/Conseil_des_droits_de_l%E2%80%99homme_des_Nations_unies">Conseil des droits de l&rsquo;homme des Nations unies</a>.&nbsp;</strong></p>
+
+<p dir="ltr">Ils appellent &agrave; l&#39;application des droits humains des personnes <strong>LGBT et intersexu&eacute;es</strong> : le Principe 18, &laquo; Protection contre les abus m&eacute;dicaux &raquo;, stipule que :</p>
+
+<p dir="ltr">&laquo;&nbsp;Nul ne peut &ecirc;tre forc&eacute; de subir une quelconque forme de traitement, de protocole ou de test m&eacute;dical ou psychologique, ou d&rsquo;&ecirc;tre enferm&eacute; dans un &eacute;tablissement m&eacute;dical, en raison de son orientation sexuelle ou de son identit&eacute; de genre. En d&eacute;pit de toute classification allant dans le sens contraire, l&rsquo;orientation sexuelle et l&rsquo;identit&eacute; de genre d&rsquo;une personne ne sont pas en soi des maladies et ne doivent pas &ecirc;tre trait&eacute;es, soign&eacute;es ou supprim&eacute;es.&nbsp;&raquo;</p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr">
+        <br>
+</p>
+
+<p dir="ltr"><span style="font-size: 18px;"><strong>Intersexe et LGBT ? m&ecirc;me combat ? Une alliance profitable aux deux partis ?</strong></span></p>
+
+<p dir="ltr">&nbsp;</p>
+
+<p dir="ltr">Les intersexes sont d&eacute;sign&eacute;s comme des personnes aux <strong>conditions pathologiques</strong> qu&rsquo;il faut &laquo; r&eacute;parer &raquo;. Ils sont compl&egrave;tement invisibilis&eacute;s. Cela rappelle &eacute;norm&eacute;ment le pass&eacute; des homosexuels pour qui, il y a 30 ans, la d&eacute; - m&eacute;dicalisation de leur sexualit&eacute; &eacute;tait au c&oelig;ur des <a href="http://www.slate.fr/story/41351/homosexualite-maladie">discussions</a>.&nbsp;</p>
+
+<p dir="ltr">En effet, les homosexuels ont &eacute;t&eacute; trait&eacute;s comme des personnes ayant une pathologie psychiatrique. Jusqu&rsquo;en 1992 en France, l&rsquo;homosexualit&eacute; avait sa place dans un diagnostic au m&ecirc;me titre que la schizophr&eacute;nie ou la d&eacute;pression. Tout cela a amen&eacute; la psychiatrie &agrave; se remettre en question.&nbsp;</p>
+
+<p dir="ltr" style="text-align: center;">M&ecirc;me si les LGBT et les intersexes ont men&eacute; (ou m&egrave;nent pour les intersexes) le m&ecirc;me combat pour la d&eacute;-pathologisation de leur situation, cela justifie-t-il leur association ?</p>
+
+<p dir="ltr">L&#39;acronyme LGBT repr&eacute;sente ceux qui ont des orientations sexuelles et des identit&eacute;s de genre qui diff&egrave;rent de ce que l&rsquo;on conna&icirc;t traditionnellement.&nbsp;</p>
+
+<p dir="ltr">&Ecirc;tre intersexe, ce n&#39;est pas une orientation sexuelle ou une identit&eacute; de genre, c&#39;est physique, &ccedil;a a rapport avec le <strong>corps</strong>.&nbsp;</p>
+
+<p dir="ltr">Certaines personnes intersexes peuvent effectivement faire partie des LGBT mais pas n&eacute;cessairement. Pourtant, avant m&ecirc;me d&rsquo;&ecirc;tre mis sous le m&ecirc;me acronyme, les intersexes &eacute;taient forc&eacute;ment vus comme des personnes faisant parties de la communaut&eacute; LGBT.</p>
+
+<p dir="ltr">
+        <br>
+</p>
+
+<p dir="ltr">&laquo; Le traitement chirurgical pour les conditions intersexes est fortement <strong>motiv&eacute; par l&#39;homophobie, la transphobie et la misogynie</strong>. La m&eacute;decine occidentale d&eacute;finit les organes g&eacute;nitaux &quot;fonctionnels&quot; masculins et f&eacute;minins en termes de capacit&eacute; &agrave; participer &agrave; un rapport sexuel h&eacute;t&eacute;rosexuel plut&ocirc;t que de combien de plaisir sexuel les patients peuvent atteindre - c&#39;est pourquoi &eacute;liminer le clitoris d&#39;une femme est m&eacute;dicalement acceptable selon les m&eacute;decins, aussi longtemps que son vagin est assez profond pour &ecirc;tre p&eacute;n&eacute;tr&eacute; par un p&eacute;nis.&nbsp;&raquo; [<a href="http://www.intersexinitiative.org/articles/lgbti.html">Source1</a>] [<a href="https://www.autostraddle.com/brought-to-you-by-the-letter-i-why-intersex-politics-matters-to-lgbt-activism-192760/">Source2</a>]</p>
+
+<p dir="ltr">
+        <br>
+</p>
+
+<p dir="ltr">Les intersexu&eacute;s font encore plus face &agrave; une <strong>invisibilit&eacute;</strong> lorsqu&rsquo;ils sont entra&icirc;n&eacute;s dans un mouvement aussi large que LGBT. Les intersexes en deviennent compl&egrave;tement d&eacute;pendants et il devient tr&egrave;s difficile par exemple de retrouver des ressources sp&eacute;cifiques aux intersexes sur internet. LGBTI sur internet renvoie des r&eacute;sultats uniquement sur les combats des LGBT et non des LGBTI.</p>
+
+<p dir="ltr">Qui de mieux plac&eacute; pour parler de la cause intersexe que les intersexes eux m&ecirc;me ?</p>
+
+<p dir="ltr">Les besoins des intersexes et du reste du mouvement LGBT sont diff&eacute;rents. Le mouvement intersexe (si l&rsquo;on peut parler d&rsquo;un mouvement) n&rsquo;est pas un mouvement identitaire, les intersexes n&rsquo;ont pas une seule identit&eacute; ou orientation sexuelle en commun comme les membres du mouvement LGBT.</p>
+
+<p dir="ltr">Selon certains <a href="http://www.intersexinitiative.org/articles/lgbti.html">intersexu&eacute;s</a>, &laquo;&nbsp;le mouvement LGBT n&rsquo;a pas une n&eacute;cessit&eacute; de changer le nom de leur organisation. Une association LGBT peut et devrait travailler sur des probl&eacute;matiques intersexe comme sur d&rsquo;autres probl&eacute;matiques tels que l&rsquo;anti-racisme et l&rsquo;anti-sexisme. Ce qui compte c&rsquo;est ce qu&rsquo;on fait par l&rsquo;appellation de notre association.&nbsp;&raquo;</p>
+
+<p dir="ltr"><img src="https://lh6.googleusercontent.com/r39GIxHV7DBGJylS1IdE7bPD6Dp7Ik1NNdfPtP7J3KcHFI-TZ6OvClBPMIQWoldgog3SflIFLlRVmWE_xDcshIZzYSMzw3ulWcX3zmhaz60IeOk0GRLc1ccVHNcjgIxLtHLhJMv0futPHXpcfg" width="605" height="340" class="fr-fic fr-dib">&nbsp;</p>
+
+<p dir="ltr" style="text-align: center;"><em><span style="font-size: 10px;">Orientation sexuelle des intersexes https://oii.org.au/demographics/</span></em></p>
+
+<p dir="ltr" style="text-align: center;">
+        <br>
+</p>
+
+<p dir="ltr">Il y a quelques ann&eacute;es, l&rsquo;acronyme LGB est devenu LGBT avec le &ldquo;T&rdquo; pour <strong>Trans*</strong>.&nbsp;</p>
+
+<p dir="ltr">Pour autant, &ecirc;tre trans* n&rsquo;est pas une orientation sexuelle. La transidentit&eacute; est le fait chez une personne d&#39;avoir une identit&eacute; de genre autre que celle assign&eacute;e &agrave; la naissance. On parlera d&#39;une personne transgenre ou, plus commun&eacute;ment, d&#39;une personne trans.&nbsp;</p>
+
+<p dir="ltr">Quelques ann&eacute;es auparavant, le fait d&rsquo;&ecirc;tre <a href="http://everyoneisgay.com/are-intersex-people-inherently-queer/">trans*</a> semblait plus li&eacute; &agrave; la transition et n&rsquo;avoir aucun point commun avec les L, G, B. Cependant, il est paru logique pour les L, G, B et les trans* de s&rsquo;allier pour pouvoir mener &agrave; bien la lutte pour leurs droits et la reconnaissance de leur identit&eacute;. <span style="background-color: transparent; text-align: inherit;">&nbsp;</span></p>
+
+<p dir="ltr">Intersexe ne constitue pas une forme de diversit&eacute; de genre, car &ecirc;tre intersexe ne concerne pas le genre, ni la transition. Intersexe concerne les corps et les diff&eacute;rences physiques cong&eacute;nitales dans les caract&eacute;ristiques sexuelles.</p>
+
+<p dir="ltr" style="text-align: center;">Est-il n&eacute;cessaire que la majorit&eacute; des personnes intersexes s&#39;identifient compl&egrave;tement en termes d&#39;orientation sexuelle ou d&#39;identit&eacute; de genre aux L, G, B, T pour pouvoir justifier la l&eacute;gitimit&eacute; de ce &laquo; i &raquo; ?&nbsp;</p>
+
+<p dir="ltr" style="text-align: center;">Le mouvement LGBT est-il pr&ecirc;t &agrave; accueillir le &laquo; i &raquo; de fa&ccedil;on officiel et &agrave; d&eacute;fendre leur cause autant que celles des L, G, B ou T ?</p>
+        
+        
+        <p> <b>Frise : </b> <img src="img/triangle.png" class="viewmore" vm="false" th="400px"/></p>
+        
+        <div class="viewmorediv">
+            <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1jeGypSlXXMH3eCuIFIlBWmGbSKuAQo_XIVRh1yQACCE&font=UnicaOne-Vollkorn&lang=fr&initial_zoom=0&height=400' width='100%' height='400' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+        </div>
+    </div>
+    <div class="debate" id="d5" num="5">
+        <p dir="ltr"  class="text-center"><strong><span style="font-size: 24px;">Doit-on traiter les personnes intersexes comme des pathologies ?</span></strong></p>
+
+        <p dir="ltr">&nbsp;</p>
+        
+        <p dir="ltr">La controverse sur la qualit&eacute; pathologique ou non des personnes intersexes, ayant pour cons&eacute;quence l&rsquo;intervention ou l&#39;absence d&rsquo;intervention chirurgicale, est un sujet sensible.</p>
+        
+        <p dir="ltr">&nbsp;</p>
+        
+        <p dir="ltr">C&rsquo;est ainsi qu&rsquo;en 2006 les m&eacute;decins se sont mobilis&eacute;s lors d&rsquo;une <a href="https://www.pedsendo.org/education_training/healthcare_providers/consensus_statements/assets/DSDconsensusPediatrics2006.pdf">conf&eacute;rence</a> afin d&rsquo;arriver &agrave; un consensus international sur les intersexes. Cette conf&eacute;rence organis&eacute;e par la Lawson Wilkins Pediatric Endocrine Society et l&rsquo;European Society for Paediatric Endocrinology avait pour but de red&eacute;finir les termes employ&eacute;s pour d&eacute;signer les personnes intersexes et les diff&eacute;rentes pathologies les affectants. En effet, ces termes &eacute;taient jug&eacute;s d&rsquo;une part trop flous et d&rsquo;autres part trop p&eacute;joratifs pour les patients. On parle depuis de d&eacute;sordre du d&eacute;veloppement sexuel et non plus d&rsquo;intersexe. Les anciennes appellations sont regroup&eacute;es sous de nouveaux <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2082839/table/tbl1/">noms</a>. Toutes les anomalies portent un nom bien pr&eacute;cis en fonction des diff&eacute;rences de ph&eacute;notype et de caryotype observ&eacute;es par rapport au personnes non intersexes. Chaque diff&eacute;rence est associ&eacute;e &agrave; un ou plusieurs proc&eacute;d&eacute;s chirurgicaux et/ou endocrinologiques et/ou psychologiques visant &agrave; corriger cette diff&eacute;rence ou &agrave; l&rsquo;att&eacute;nuer le mieux possible. Dans une <a href="http://www.college-chirped.fr/College_National_Hospitalier_et_Universitaire_de_Chirurgie_Pediatrique/Cours_Themes___Uro-Viscerale_files/Chirurgie%20des%20Anomalies%20du%20Développement%20Sexuel%20-%20Mouriquand%20-%20Mars%202007.pdf">publication</a> du docteur Pierre Mouriquand, chirurgien en p&eacute;diatrie, on peut trouver des d&eacute;tails tr&egrave;s pr&eacute;cis des op&eacute;rations chirurgicales r&eacute;alis&eacute;es en fonction de la pathologie. Dans cette publication, on peut remarquer deux types de pathologies. Celles o&ugrave; une unique m&eacute;thode chirurgicale est pr&eacute;sent&eacute;e et celles o&ugrave; il y en a plusieurs. Cela refl&egrave;te donc une grande vari&eacute;t&eacute; de pathologies au sein des DSD et une certaine incertitude sur les m&eacute;thodes &agrave; employer dans certains cas. On voit donc que pour les m&eacute;decins les intersexes pr&eacute;sentent donc des caract&eacute;ristiques pathologiques mais face auxquelles l&rsquo;action &agrave; mener n&rsquo;est pas imm&eacute;diate et certaine.</p>
+        
+        <p dir="ltr">&nbsp;</p>
+        
+        <p dir="ltr">Du point de vue des docteurs en sciences sociales on ne rencontre pas de d&eacute;nis d&rsquo;un probl&egrave;me chez les personnes intersexes; qu&rsquo;il soit social ou de sant&eacute;. Cependant ils ne sont pas toujours en accord avec les techniques employ&eacute;es par les m&eacute;decins. <a href="https://www.erudit.org/fr/revues/nps/2016-v28-n1-nps02990/1039174ar/">Pour&nbsp;</a>Janik Bastien Charlebois, intersexe et professeure au d&eacute;partement de sociologie &agrave; l&rsquo;Universit&eacute; du Qu&eacute;bec &agrave; Montr&eacute;al, le jugement des professionnels m&eacute;dicaux s&rsquo;investissant dans la prise en charge intersexe peut &ecirc;tre impr&eacute;gn&eacute; de pr&eacute;suppos&eacute;s non fond&eacute;s ou d&rsquo;aprioris culturels (voir ci-apr&egrave;s). Pour elle cela souligne la faillibilit&eacute; de leur jugement et donc leur susceptibilit&eacute; d&rsquo;adopter des approches inappropri&eacute;es et dommageables lors du traitement de la pathologie. <a href="http://www.revueintervention.org/numeros-en-ligne/142/lenfant-intersexue-dysphorie-entre-le-modele-medical-et-linteret-superieur-de">Pour&nbsp;</a>Andr&eacute; Wilcox, Isabelle C&ocirc;t&eacute;,&nbsp;et&nbsp;Genevi&egrave;ve Pag&eacute;&nbsp;c&rsquo;est&nbsp;l&rsquo;incapacit&eacute; de l&rsquo;enfant de s&rsquo;exprimer et la diff&eacute;rences entre le sexe biologique et le sexe social (ou genre) qui devrait amener &agrave; privil&eacute;gier&nbsp;le respect de l&rsquo;int&eacute;r&ecirc;t sup&eacute;rieur des enfants intersexes en r&eacute;alisant des interventions plus inclusives et non suppressives.</p>
+        
+        <p dir="ltr">&nbsp;</p>
+        
+        <p> <b>Frise : </b> <img src="img/triangle.png" class="viewmore" vm="false" th="400px"/></p>
+        
+        <div class="viewmorediv">
+           <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1jyoW3HpCtxn2Xa-FX5egJoBSLx5JfDJGz6u1I4bPXfI&font=UnicaOne-Vollkorn&lang=fr&initial_zoom=0&height=400' width='100%' height='400' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+        </div>
+
+    </div>
+    <div class="debate" id="d4" num="4">
+        <p dir="ltr"><strong><span style="font-size: 24px;">A qui devrait revenir la d&eacute;cision pour les op&eacute;rations qui se font &agrave; la naissance ?</span></strong></p>
+
+        <p dir="ltr">&nbsp;</p>
+        
+        <p dir="ltr">Une intervention chirurgicale est un proc&eacute;d&eacute; irr&eacute;versible et qui doit donc faire l&rsquo;objet d&rsquo;un r&eacute;flexion approfondie. Les enfants intersexes sont souvent op&eacute;r&eacute;s en urgence. Mais qui prend la d&eacute;cision ? et est il n&eacute;cessaire de le faire si t&ocirc;t ?</p>
+        
+        <p dir="ltr">&nbsp;</p>
+        
+        <p dir="ltr">En 1955, John Money, psychologue a publi&eacute; un <a href="http://dirtywhiteboi67.blogspot.fr/2016/06/dr-john-money-and-theory-of-gender.html">th&eacute;orie</a> stipulant que le conditionnement et l&rsquo;&eacute;ducation sociale ont pr&eacute;s&eacute;ance sur la biologie originelle du corps quant &agrave; l&rsquo;&eacute;laboration de l&rsquo;identit&eacute; de genre qui, elle, serait mall&eacute;able jusqu&rsquo;&agrave; 18 mois. Les travaux de Money ont eu une influence d&eacute;terminante sur le traitement des enfants intersexu&eacute;s. Cela explique la prise en charge rapide par certains m&eacute;decins des enfants intersexes et ce souvent apr&egrave;s de br&egrave;ves explications aupr&egrave;s des parents qui acceptent souvent par peur et ignorance. En 1967, Money essaya de <a href="https://www.cairn.info/revue-cahiers-du-genre-2003-1-page-81.htm">d&eacute;montrer</a> sa th&eacute;orie en castrant un enfant de 2 ans et demi ayant perdu son p&eacute;nis &agrave; l&#39;&acirc;ge de 9 mois et en l&rsquo;&eacute;levant comme une fille avec l&rsquo;aide d&rsquo;hormones f&eacute;minines. Cependant, l&rsquo;exp&eacute;rience ne fut pas concluante car plus tard cet enfant souhaita retrouver son sexe masculin. C&rsquo;est cette &eacute;chec qui sema le doute au sein des scientifiques qui sont maintenant plus partag&eacute;s sur les comportements &agrave; adopter face aux pathologies intersexes.</p>
+        
+        <p dir="ltr">&nbsp;</p>
+        
+        <p dir="ltr">Dans un <a href="https://www.ncbi.nlm.nih.gov/pubmed/27132944">&eacute;crit&nbsp;</a>, publi&eacute; en 2016,d&rsquo;un colloque de chirurgiens p&eacute;diatriques, dont Pierre Mouriquand, on retrouve cette prise de conscience des controverses engendr&eacute;es par les op&eacute;rations et des incertitudes pr&eacute;sentes sur leur potentielle bienfaisance. Il est mentionn&eacute; que la classification faite lors du consensus de 2006 n&rsquo;indique en aucune fa&ccedil;on dans quelle situation une op&eacute;ration est n&eacute;cessaire et si elle l&rsquo;est quand et comment la r&eacute;aliser. Cela entra&icirc;ne donc au sein du milieu m&eacute;dical un importante multiplicit&eacute; des modes d&rsquo;interventions. Cependant, ces m&eacute;decins expliquent que dans certain cas &nbsp;les cons&eacute;quences d&rsquo;une non intervention peuvent &ecirc;tre plus dramatiques. Par exemple dans le cas d&rsquo;une hyperplasie cong&eacute;nitales de surr&eacute;nales <a href="http://robertdebre.aphp.fr/wp-content/blogs.dir/137/files/2013/08/Hyperplasie_Congenitale_Surrenales_orphanet_09.pdf">(HCS)</a> chez les filles, entra&icirc;nant une surproduction d&rsquo;hormones masculines, peut, si non trait&eacute; au niveau endocrinologique, r&eacute;sulter en une masculinisation importante et un dysfonctionnement de la sexualit&eacute; f&eacute;minine. Les op&eacute;rations visant &agrave; reconstituer l&rsquo;allure d&rsquo;un organe sexuelle f&eacute;minin ne sont pas obligatoires mais permettent d&rsquo;&eacute;viter des troubles psychologiques d&ucirc; &agrave; la diff&eacute;rence physique. Ces op&eacute;rations entra&icirc;nent souvent une perte de sensibilit&eacute; mais pas de complications.</p>
+        
+        <p dir="ltr">&nbsp;</p>
+        
+        <p dir="ltr">Au niveau des sciences sociales les avis diff&egrave;rent. Certains souhaites attendre avant de r&eacute;aliser ces op&eacute;rations afin que le patient concern&eacute; puisse exprimer son opinion sur le sujet. <a href="http://www.revueintervention.org/numeros-en-ligne/142/lenfant-intersexue-dysphorie-entre-le-modele-medical-et-linteret-superieur-de">Pour&nbsp;</a>Andr&eacute; Wilcox, Isabelle C&ocirc;t&eacute;, et Genevi&egrave;ve Pag&eacute;, les parents et les enfants ont besoin d&rsquo;&ecirc;tre accompagn&eacute;s sans qu&#39;ils leurs soient impos&eacute;s des traitements qui n&rsquo;ont pas fait leurs preuves. En effet, pour le cas de l&rsquo;hypospadias, une malformation du f&oelig;tus masculin qui se manifeste par l&#39;ouverture de l&#39;ur&egrave;tre dans la face inf&eacute;rieure du p&eacute;nis au lieu de son extr&eacute;mit&eacute;, la technique chirurgicale employ&eacute;e reste encore tr&egrave;s hasardeuse. Cette pathologie souvent trait&eacute;e aux alentours de la 3&egrave;me ann&eacute;e du patient entra&icirc;nent fr&eacute;quemment des complications, dont font &eacute;tats les <a href="http://www.college-chirped.fr/College_National_Hospitalier_et_Universitaire_de_Chirurgie_Pediatrique/Cours_Themes___Uro-Viscerale_files/Chirurgie%20des%20Anomalies%20du%20Développement%20Sexuel%20-%20Mouriquand%20-%20Mars%202007.pdf">publications</a> m&eacute;dicales. &nbsp;Cependant cette pathologie n&rsquo;a pas un caract&egrave;re l&eacute;tale pour le patient. Elle repr&eacute;sente seulement un g&ecirc;ne pour uriner et avoir de bons rapport sexuels. Il serait donc possible d&rsquo;attendre plus de temps pour r&eacute;aliser cette op&eacute;ration et donc de prendre en compte plus de facteurs. Cependant, pour d&rsquo;autres pathologies, l&#39;ambigu&iuml;t&eacute; du sexe peut poser probl&egrave;me avec l&rsquo;assignation au niveau juridique, entra&icirc;nant ainsi une tendance &agrave; une op&eacute;ration rapide afin d&rsquo;assigner un sexe.&nbsp;</p>
+        
+        <p dir="ltr">&nbsp;</p>
+        
+        <p dir="ltr">Pour les op&eacute;rations ne pouvant &ecirc;tre retard&eacute;e, Janik Bastien Charlebois, <a href="https://www.erudit.org/fr/revues/nps/2016-v28-n1-nps02990/1039174ar/">propose&nbsp;</a>de prendre en compte l&rsquo;avis d&rsquo;une population repr&eacute;sentative de l&rsquo;enfant afin de cerner ad&eacute;quatement et comprendre les besoins potentiellement diversifi&eacute;s qu&rsquo;il &eacute;prouve et n&rsquo;est pas encore capable d&rsquo;exprimer. L&rsquo;argument est qu&rsquo;une personne intersexu&eacute;e prise individuellement ne peut &ecirc;tre infaillible dans la construction de toutes ses r&eacute;flexions mais qu&rsquo;on ne peut n&eacute;gliger la qualit&eacute; des r&eacute;flexions collectives produites par les membres d&rsquo;une communaut&eacute;.</p>
+        
+        <p dir="ltr">&nbsp;</p>
+        
+        <p dir="ltr">&nbsp;</p>
+        
+        <p class="poll">
+            <b>Sondage :</b>
+            Si un enfant naît avec une ambiguïté sexuelle (mais sans problèmes de santé graves) à savoir que ses organes génitaux sont difficiles ou impossibles à définir comme mâles ou comme femelles selon les standards habituels. Qui doit décider du sexe de l’enfant ?
+        </p>
+
+        <svg width="696" height="200" aria-label="Graphique" style="overflow: hidden;"><defs id="defs"><filter id="_ABSTRACT_RENDERER_ID_17"><feGaussianBlur in="SourceAlpha" stdDeviation="2"></feGaussianBlur><feOffset dx="1" dy="1"></feOffset><feComponentTransfer><feFuncA type="linear" slope="0.1"></feFuncA></feComponentTransfer><feMerge><feMergeNode></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><rect x="0" y="0" width="696" height="200" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="441" y="10" width="220" height="69" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g column-id="Les médecins"><rect x="441" y="10" width="220" height="12" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="458" y="20.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">Les médecins</text></g><circle cx="447" cy="16" r="6" stroke="none" stroke-width="0" fill="#3366cc"></circle></g><g column-id="Les parents"><rect x="441" y="29" width="220" height="12" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="458" y="39.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">Les parents</text></g><circle cx="447" cy="35" r="6" stroke="none" stroke-width="0" fill="#dc3912"></circle></g><g column-id="Personne"><rect x="441" y="48" width="220" height="12" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="458" y="58.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">Personne</text></g><circle cx="447" cy="54" r="6" stroke="none" stroke-width="0" fill="#ff9900"></circle></g><g column-id="On décidera plus tard"><rect x="441" y="67" width="220" height="12" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g><text text-anchor="start" x="458" y="77.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#222222">On décidera plus tard</text></g><circle cx="447" cy="73" r="6" stroke="none" stroke-width="0" fill="#109618"></circle></g></g><g><path d="M229,100L319,100A90,90,0,0,1,289.74847013663896,166.4049951137555L229,100A0,0,0,0,0,229,100" stroke="#ffffff" stroke-width="1" fill="#3366cc"></path><text text-anchor="start" x="265.99740994650574" y="128.2062153727322" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">13,2%</text></g><g><path d="M229,100L289.74847013663896,166.4049951137555A90,90,0,0,1,252.72284494621607,186.81720237175227L229,100A0,0,0,0,0,229,100" stroke="#ffffff" stroke-width="1" fill="#dc3912"></path></g><g><path d="M229,100L139.15806414121107,105.33165651043431A90,90,0,1,1,319,100L229,100A0,0,0,1,0,229,100" stroke="#ffffff" stroke-width="1" fill="#109618"></path><text text-anchor="start" x="209.43935676611207" y="34.69250874067822" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">50,9%</text></g><g><path d="M229,100L252.72284494621607,186.81720237175227A90,90,0,0,1,139.15806414121107,105.33165651043431L229,100A0,0,0,0,0,229,100" stroke="#ffffff" stroke-width="1" fill="#ff9900"></path><text text-anchor="start" x="175.24877343133332" y="154.72261177939197" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#ffffff">28,3%</text></g><g></g></svg>
+    
+        <p> <b>Frise : </b> <img src="img/triangle.png" class="viewmore" vm="false" th="400px"/></p>
+        
+        <div class="viewmorediv">
+           <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1jyoW3HpCtxn2Xa-FX5egJoBSLx5JfDJGz6u1I4bPXfI&font=UnicaOne-Vollkorn&lang=fr&initial_zoom=0&height=400' width='100%' height='400' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+        </div>
+    
+    </div>
+
+</div>
+
+</body>
+</html>

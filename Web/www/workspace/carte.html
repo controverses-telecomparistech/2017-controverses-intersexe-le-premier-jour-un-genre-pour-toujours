@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="script/menu.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/menu.css" type="text/css" />
+    <link rel="stylesheet" href="style/main.css" type="text/css" />
+      <style type="text/css">
+    body {
+      font: 12pt arial;
+    }
+    #mynetwork {
+      margin-top : 35px;
+      height: 600px;
+      border: 1px solid lightgray;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  </style>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.19.1/vis.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.19.1/vis.min.css" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript"> 
+    var nodes = null;
+    var edges = null;
+    var network = null;
+    var DIR = 'img/acteurs/';
+    // Called when the Visualization API is loaded.
+    function draw() {
+      // create people.
+      // value corresponds with the age of the person
+      
+      nodes = [
+        {id: 1,  shape: 'circularImage', image: DIR + 'ico_lgbtplus.jpg', label : "LGBT+"},
+        {id: 2,  shape: 'circularImage', image: DIR + 'oii.png', label : "OII"},
+        {id: 3,  shape: 'circularImage', image: DIR + 'genrespluriels.png', label : "Genres Pluriels"},
+        {id: 4,  shape: 'circularImage', image: DIR + 'tracie.jpg', label : "Tracie O'Keefe"},
+        {id: 5,  shape: 'circularImage', image: DIR + 'claudia.png', label : "Claudia Astorino"},
+        {id: 6,  shape: 'circularImage', image: DIR + 'emik.jpg', label : "Emi Koyama"},
+        
+        {id: 7,  shape: 'circularImage', image: DIR + 'isabel.jpg', label : "Isabelle Côté"},
+        {id: 8,  shape: 'circularImage', image: DIR + 'ombredanne.jpg', label : "Louis Ombrédanne"},
+        {id: 9,  shape: 'circularImage', image: DIR + 'pierrem.jpg', label : "Pierre Mouriquand"},
+        {id: 10, shape: 'circularImage', image: DIR + 'lawson.jpg', label : "Lawson Wilkins"},
+        {id: 11, shape: 'circularImage', image: DIR + 'johnm.png', label : "John Money"},
+        {id: 12, shape: 'circularImage', image: DIR + 'janik.jpg', label : "Janik Bastien Charlebois"},
+        {id: 13, shape: 'circularImage', image: DIR + 'andre.jpg', label : "André Wilcox"},
+        {id: 14, shape: 'circularImage', image: DIR + 'genevieve.jpg', label : "Geneviève Pagé"},
+        
+        {id : 20, shape: 'circular', label : "Corps Médiacal"},
+        {id : 21, shape: 'circular', label : "Controverse"},
+        {id: 22, shape: 'circularImage', image: DIR + 'enfant.png', label : "Livre : L'enfant intersexué"}
+      ];
+
+      // create connections between people
+      // value corresponds with the amount of contact between two people
+      edges = [
+        {from: 1, to: 2},
+        {from: 2, to: 3},
+        {from: 1, to: 4},
+        {from: 1, to: 5},
+        {from: 1, to: 6},
+        
+        {from : 7, to : 22},
+        {from : 8, to : 20},
+        {from : 9, to : 20},
+        {from : 10, to : 20},
+        {from : 11, to : 20},
+        {from : 12, to : 20},
+        {from : 13, to : 22},
+        {from : 14, to : 22},
+        
+        {from : 22, to : 20},
+        {from : 21, to : 20},
+        {from : 21, to : 1},
+        
+        {from : 11, to : 10},
+        {from : 9, to : 8},
+      ];
+
+      // create a network
+      var container = document.getElementById('mynetwork');
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {
+        nodes: {
+          borderWidth:4,
+          size:30,
+	      color: {
+            border: '#222222',
+            background: '#666666'
+          },
+          font:{color:'#eeeeee'}
+        },
+        edges: {
+          color: 'lightgray'
+        }
+      };
+      
+      network = new vis.Network(container, data, options);
+        network.on("select", function (params) {
+            if(params.nodes.length > 0){
+                onSelectNode(params.nodes[0]);
+            }
+        });
+        network.on("deselectNode", function(params){
+            console.log(params);
+           for(var i=0; i < params.previousSelection.nodes.length; i++){
+               onDeselectNode(params.previousSelection.nodes[i]);
+           } 
+        });
+    }
+    
+    function onSelectNode(i){
+        var nodeInfo = document.getElementById("node"+i);
+        if(nodeInfo) nodeInfo.style.display = "";
+    }
+    
+    function onDeselectNode(i){
+        var nodeInfo = document.getElementById("node"+i);
+        if(nodeInfo) nodeInfo.style.display = "none";
+    }
+  </script>
+    
+
+</head>
+
+<body onload="draw()">
+
+<div class="menu">
+    <ul class="top-menu sous-menu">
+        <li><a href="index.html"> Accueil </a></li>
+        <li>
+            <a href="index.html#tree"> Controverse </a>
+            <ul>
+                <li><a href="index.html#tree">Arbre des débats</a></li>
+                <li><a href="carte.html">Cartes des acteurs</a></li>
+                <li><a href="chrono.html">Frise des débats</a></li>
+                <li><a href="sondage.html">Sondage</a></li>
+            </ul>
+        </li>
+        <li><a href="conclusion.html">Conclusion</a></li>
+    </ul>
+    
+    <ul class="bottom-menu sous-menu">
+        <li><a href="apropos.html">A propos</a></li>
+    </ul>
+</div>
+
+<div class="page">
+    <div class="row">
+    
+    <div class="col-md-8 col-md-offset-2" id="mynetwork"></div>
+    
+    <div class="col-md-1" id="infos">
+
+    </div>
+
+</div>
+</div>
+
+</body>
+</html>

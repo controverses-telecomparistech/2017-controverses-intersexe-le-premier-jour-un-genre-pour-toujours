@@ -1,0 +1,101 @@
+#title{
+    padding-top: 10px;
+    margin : 0;
+}
+
+#title span{
+    box-shadow : 0 0 10px rgb(255, 216, 0);
+    display: inline-block;
+    padding : 15px 15px 15px 15px;
+    background-color: rgb(45, 1, 63);
+    border-radius: 8px;
+    color : rgb(255, 216, 0);
+}
+
+#subtitle{
+    font-style: italic;
+}
+
+#intro h5{
+    /*max-width: 50%;*/
+    margin-top : 8vh;
+    text-shadow: 0 0 8px white;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+
+#intro h5 img{
+    width : 30px;
+}
+
+#down{
+    margin-top : 8px;
+    cursor: pointer;
+}
+
+#pres{
+    color : rgb(45, 1, 63);
+    margin-top : 30px;
+    text-align: justify
+}
+
+#pres>div{
+    box-shadow : 0 0 14px rgb(45, 1, 63);
+    border-radius : 8px 8px 0 8px;
+    background-color: rgba(255, 255, 255, 0.8);/*rgba(255, 216, 0, 0.3); */
+
+}
+
+#pres div{
+    padding: 0;
+}
+
+#pres #text{
+    padding-left : 20px;
+    /*background-color: rgb(255, 216, 0); */
+    height: 100%;
+}
+
+#logo img{
+    width : 100%;
+}
+
+#pres svg{
+    display: block;
+}
+
+#pres a{
+    margin-top: 5px;
+}
+
+
+.page{
+    min-height: 100vh;
+    background-image: url("../img/intersex-flag-opacity.png"); 
+    background-size: cover;
+    /*position : absolute; */
+}
+
+.tl-page{
+    width : 100%;
+    min-height : 100vh;
+    padding-left: 20px;
+    background-image: url("../img/intersex-flag-opacity.png"); 
+    background-size: cover;
+}
+
+.tl-page h2{
+    margin-top : 0;
+    padding-top: 20px;
+}
+
+.viewmore{
+    transform: rotate(0deg);
+    width : 16px;
+    cursor: pointer;
+}
+
+.viewmorediv{
+    height : 0;
+    overflow : hidden;
+}
