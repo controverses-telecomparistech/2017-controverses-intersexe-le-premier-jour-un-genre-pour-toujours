@@ -174,6 +174,8 @@ function zoomImgAt(img, factor, mx, my, imgNotTargeted){
     if(zoom < 2 && zoom * factor >= 2) changeImg(true);
     if(zoom >= 2 && zoom * factor < 2) changeImg(false);
     zoom *= factor;
+    if(zoom < 0.6) zoom = 0.6;
+    if(zoom > 4) zoom = 4; 
     var dx = Math.round(parseInt(img.css("width")) - BASE_WIDTH*zoom);
     globalImg.css("width", BASE_WIDTH*zoom);
     specImg.css("width", BASE_WIDTH*zoom);
